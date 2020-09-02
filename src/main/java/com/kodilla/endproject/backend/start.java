@@ -12,15 +12,14 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class start {
 
     private AppUserRepository appUserRepository;
-    private AppUserMapper appUserMapper;
     private PasswordEncoder passwordEncoder;
 
-    public start(AppUserRepository appUserRepository, AppUserMapper appUserMapper, PasswordEncoder passwordEncoder ) {
+    public start(AppUserRepository appUserRepository, PasswordEncoder passwordEncoder ) {
         this.appUserRepository = appUserRepository;
-        this.appUserMapper = appUserMapper;
+        this.passwordEncoder = passwordEncoder;
 
-        AppUserDto appUserDto = new AppUserDto("Roman",passwordEncoder.encode("Roman"),"ADMIN");
-        appUserRepository.save(appUserMapper.mapToAppUser(appUserDto));
+        AppUserDto appUserDto = new AppUserDto("Roma",passwordEncoder.encode("Roman"),"ADMIN");
+        appUserRepository.save(AppUserMapper.getInstance().mapToAppUser(appUserDto));
     }
 
 
