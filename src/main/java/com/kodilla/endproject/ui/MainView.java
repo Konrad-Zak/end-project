@@ -1,6 +1,8 @@
 package com.kodilla.endproject.ui;
 
+import com.kodilla.endproject.backend.domian.PersonDto;
 import com.kodilla.endproject.ui.view.DailyCaloricRequirementView;
+import com.kodilla.endproject.ui.view.LoginView;
 import com.kodilla.endproject.ui.view.MealChoiceView;
 import com.kodilla.endproject.ui.view.ProfileView;
 import com.vaadin.flow.component.Component;
@@ -26,13 +28,15 @@ import com.vaadin.flow.router.RouterLink;
 
 public class MainView extends AppLayout {
 
+    PersonDto personDto = PersonDto.getInstance();
+
     public MainView() {
         createHeader();
         createDrawer();
     }
 
     private void createHeader() {
-        H1 logo = new H1("App nutritional plan");
+        H1 logo = new H1("App nutritional plan" + personDto.getUsername());
         logo.addClassName("logo");
 
         Anchor logout = new Anchor("logout", "Log out");

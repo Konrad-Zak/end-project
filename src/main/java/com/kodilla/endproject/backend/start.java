@@ -10,7 +10,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 public class start {
-
+/*
     private AppUserRepository appUserRepository;
     private PasswordEncoder passwordEncoder;
 
@@ -20,8 +20,10 @@ public class start {
 
         AppUserDto appUserDto = new AppUserDto("Roma",passwordEncoder.encode("Roman"),"ADMIN");
         appUserRepository.save(AppUserMapper.getInstance().mapToAppUser(appUserDto));
-    }
 
+
+    }
+*/
 
 
 }
